@@ -427,14 +427,14 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
 .proxpass-section .section-heading{padding:0;margin-bottom:16px;}
 .pp-header{
   display:grid;
-  grid-template-columns:160px 1fr 160px 130px 40px;
+  grid-template-columns:160px 1fr 130px 100px 150px 40px;
   background:rgba(30,33,46,0.7);
   border-bottom:1px solid rgba(255,255,255,0.08);
   padding:0;
 }
 .pp-row{
   display:grid;
-  grid-template-columns:160px 1fr 160px 130px 40px;
+  grid-template-columns:160px 1fr 130px 100px 150px 40px;
   border-bottom:1px solid rgba(255,255,255,0.04);
   transition:background 0.15s;
 }
@@ -467,6 +467,26 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
 .pp-tag-purple{background:rgba(155,111,212,0.12);color:#9B6FD4;border:1px solid rgba(155,111,212,0.3);}
 .pp-tag-yellow{background:rgba(212,162,78,0.12);color:#D4A24E;border:1px solid rgba(212,162,78,0.3);}
 .pp-tag-green{background:rgba(78,175,114,0.12);color:#4EAF72;border:1px solid rgba(78,175,114,0.3);}
+
+/* Status da linha (Próximos Passos) */
+.pp-status{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:4px 10px;border-radius:20px;cursor:pointer;user-select:none;
+  font-family:'Fenton','Barlow Condensed',sans-serif;
+  font-weight:700;font-size:9px;letter-spacing:1px;text-transform:uppercase;
+  transition:all 0.2s;border:1px solid;width:fit-content;
+}
+.pp-status .pp-status-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.pps-todo{background:rgba(255,255,255,0.06);color:var(--text-muted);border-color:rgba(255,255,255,0.14);}
+.pps-todo .pp-status-dot{background:rgba(255,255,255,0.4);}
+.pps-wait{background:rgba(240,192,64,0.14);color:#f0c040;border-color:rgba(240,192,64,0.30);}
+.pps-wait .pp-status-dot{background:#f0c040;}
+.pps-prog{background:rgba(242,103,101,0.14);color:var(--coral);border-color:rgba(242,103,101,0.30);}
+.pps-prog .pp-status-dot{background:var(--coral);animation:pc 1.5s infinite;}
+.pps-done{background:rgba(19,187,179,0.12);color:var(--teal);border-color:rgba(19,187,179,0.30);}
+.pps-done .pp-status-dot{background:var(--teal);}
+.pps-late{background:rgba(212,78,78,0.16);color:#e35b5b;border-color:rgba(212,78,78,0.4);}
+.pps-late .pp-status-dot{background:#e35b5b;}
 .pp-add-btn{
   background:none;border:1px dashed rgba(255,255,255,0.15);
   border-radius:4px;padding:7px 16px;
@@ -486,7 +506,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
 @media(max-width:768px){
   .proxpass-section{padding:0 16px!important;}
   .pp-header,.pp-row{
-    grid-template-columns:100px 1fr 90px 80px 32px!important;
+    grid-template-columns:90px 1fr 70px 60px 110px 32px!important;
   }
   .pp-col{font-size:11px!important;padding:8px 8px!important;}
   .pp-header .pp-col{font-size:8px!important;padding:8px 8px!important;}
@@ -524,11 +544,11 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
   <div class="header-center">
     <div class="header-project-name">Programa de Aceleração de Negócios — Stoller × ZMP</div>
     <div class="phase-progress">
-      <div class="phase-pip active" onclick="showPhase(0)"><span class="phase-pip-label">Ph.1</span></div>
-      <div class="phase-pip" onclick="showPhase(1)"><span class="phase-pip-label">Ph.2</span></div>
-      <div class="phase-pip" onclick="showPhase(2)"><span class="phase-pip-label">Ph.3</span></div>
-      <div class="phase-pip" onclick="showPhase(3)"><span class="phase-pip-label">Ph.4</span></div>
-      <div class="phase-pip" onclick="showPhase(4)"><span class="phase-pip-label">Ph.5</span></div>
+      <div class="phase-pip active" onclick="showPhase(0)"><span class="phase-pip-label" contenteditable="true" data-eid="eFix968">Ph.1</span></div>
+      <div class="phase-pip" onclick="showPhase(1)"><span class="phase-pip-label" contenteditable="true" data-eid="eFix969">Ph.2</span></div>
+      <div class="phase-pip" onclick="showPhase(2)"><span class="phase-pip-label" contenteditable="true" data-eid="eFix970">Ph.3</span></div>
+      <div class="phase-pip" onclick="showPhase(3)"><span class="phase-pip-label" contenteditable="true" data-eid="eFix971">Ph.4</span></div>
+      <div class="phase-pip" onclick="showPhase(4)"><span class="phase-pip-label" contenteditable="true" data-eid="eFix972">Ph.5</span></div>
     </div>
   </div>
   <div class="header-right">
@@ -545,9 +565,9 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-label">Stoller × ZMP · Programa de Aceleração de Negócios</div>
-  <h1 class="hero-title fenton-black">Programa de <span>Aceleração</span><br>de Negócios Stoller</h1>
-  <div class="hero-subtitle">Arquitetura, Validação e Implementação Estratégica de Programa de Crescimento em Canais</div>
+  <div class="hero-label" contenteditable="true" data-eid="eFix951">Stoller × ZMP · Programa de Aceleração de Negócios</div>
+  <h1 class="hero-title fenton-black" contenteditable="true" data-eid="eFix973">Programa de <span>Aceleração</span><br>de Negócios Stoller</h1>
+  <div class="hero-subtitle" contenteditable="true" data-eid="eFix952">Arquitetura, Validação e Implementação Estratégica de Programa de Crescimento em Canais</div>
   <!-- ONDAS BANNER -->
   <div class="ondas-wrap" style="display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap;">
     <div style="flex:1;min-width:240px;padding:14px 20px;background:rgba(242,103,101,0.15);border:1px solid rgba(242,103,101,0.45);border-radius:6px;position:relative;overflow:hidden;">
@@ -581,7 +601,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
 
 <!-- PRÓXIMOS PASSOS -->
 <div class="proxpass-section" style="padding:0 60px;margin-bottom:40px;">
-  <div class="section-heading fenton-black">Próximos Passos</div>
+  <div class="section-heading fenton-black" contenteditable="true" data-eid="eFix024">Próximos Passos</div>
   <div style="background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius);overflow:hidden;">
 
     <!-- TABLE HEADER -->
@@ -590,6 +610,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
       <div class="pp-col pp-col-task">Task</div>
       <div class="pp-col pp-col-resp">Responsável</div>
       <div class="pp-col pp-col-data">Data</div>
+      <div class="pp-col pp-col-status">Status</div>
       <div class="pp-col pp-col-del" style="width:40px;"></div>
     </div>
 
@@ -600,21 +621,21 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
         <div class="pp-col pp-col-task" contenteditable="true" data-eid="e0006">Kick-off executivo do projeto Stoller × ZMP</div>
         <div class="pp-col pp-col-resp" contenteditable="true" data-eid="e0007">ZMP + Stoller</div>
         <div class="pp-col pp-col-data" contenteditable="true" data-eid="e0008">01/jul/2026</div>
-        <div class="pp-col pp-col-del"><button class="pp-del-btn" onclick="ppDelRow(this)" title="Remover">✕</button></div>
+        <div class="pp-col pp-col-status"><span class="pp-status pps-todo" data-eid="eStat001" data-stt="0" onclick="cyclePpStatus(this)"><span class="pp-status-dot"></span><span class="pps-lbl">A iniciar</span></span></div><div class="pp-col pp-col-del"><button class="pp-del-btn" onclick="ppDelRow(this)" title="Remover">✕</button></div>
       </div>
       <div class="pp-row">
         <div class="pp-col pp-col-tema"><span class="pp-tag pp-tag-blue" contenteditable="true" data-eid="e0009">Fase 1</span></div>
         <div class="pp-col pp-col-task" contenteditable="true" data-eid="e0010">Entrevistas com lideranças da Stoller</div>
         <div class="pp-col pp-col-resp" contenteditable="true" data-eid="e0011">ZMP</div>
         <div class="pp-col pp-col-data" contenteditable="true" data-eid="e0012">Jul/2026</div>
-        <div class="pp-col pp-col-del"><button class="pp-del-btn" onclick="ppDelRow(this)" title="Remover">✕</button></div>
+        <div class="pp-col pp-col-status"><span class="pp-status pps-todo" data-eid="eStat002" data-stt="0" onclick="cyclePpStatus(this)"><span class="pp-status-dot"></span><span class="pps-lbl">A iniciar</span></span></div><div class="pp-col pp-col-del"><button class="pp-del-btn" onclick="ppDelRow(this)" title="Remover">✕</button></div>
       </div>
       <div class="pp-row">
         <div class="pp-col pp-col-tema"><span class="pp-tag pp-tag-blue" contenteditable="true" data-eid="e0013">Fase 1</span></div>
         <div class="pp-col pp-col-task" contenteditable="true" data-eid="e0014">Levantamento de programas e investimentos existentes</div>
         <div class="pp-col pp-col-resp" contenteditable="true" data-eid="e0015">Stoller</div>
         <div class="pp-col pp-col-data" contenteditable="true" data-eid="e0016">Jul/2026</div>
-        <div class="pp-col pp-col-del"><button class="pp-del-btn" onclick="ppDelRow(this)" title="Remover">✕</button></div>
+        <div class="pp-col pp-col-status"><span class="pp-status pps-todo" data-eid="eStat003" data-stt="0" onclick="cyclePpStatus(this)"><span class="pp-status-dot"></span><span class="pps-lbl">A iniciar</span></span></div><div class="pp-col pp-col-del"><button class="pp-del-btn" onclick="ppDelRow(this)" title="Remover">✕</button></div>
       </div>
     </div>
 
@@ -674,54 +695,54 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
 
 <!-- PHASES GRID -->
 <div class="phases-section">
-  <div class="section-heading fenton-black">Fases da 1ª Onda</div>
+  <div class="section-heading fenton-black" contenteditable="true" data-eid="eFix025">Fases da 1ª Onda</div>
   <div class="phases-grid">
     <div class="phase-card" onclick="showPhase(0)">
-      <div class="phase-number">Fase 01</div>
-      <div class="phase-card-period">Jul–Ago / 2026</div>
+      <div class="phase-number" contenteditable="true" data-eid="eFix953">Fase 01</div>
+      <div class="phase-card-period" contenteditable="true" data-eid="eFix958">Jul–Ago / 2026</div>
       <div class="phase-card-title" contenteditable="true" data-eid="e0018" onclick="event.stopPropagation()">Diagnóstico Estratégico e Entendimento do Negócio</div>
       <div class="phase-card-deliverable" contenteditable="true" data-eid="e0019" onclick="event.stopPropagation()">⬡ Diagnóstico inicial + hipóteses de crescimento</div>
       <div data-eid="badge01" class="phase-status-badge psb-none" data-stt="0" onclick="cycleStatus(event,this)"><span class="phase-status-dot"></span><span class="stt-lbl">Não iniciado</span></div>
-      <div class="phase-cta">Ver fase</div>
+      <div class="phase-cta" contenteditable="true" data-eid="eFix963">Ver fase</div>
     </div>
     <div class="phase-card" onclick="showPhase(1)">
-      <div class="phase-number">Fase 02</div>
-      <div class="phase-card-period">Set–Out / 2026</div>
+      <div class="phase-number" contenteditable="true" data-eid="eFix954">Fase 02</div>
+      <div class="phase-card-period" contenteditable="true" data-eid="eFix959">Set–Out / 2026</div>
       <div class="phase-card-title" contenteditable="true" data-eid="e0020" onclick="event.stopPropagation()">Perspectiva dos Canais e Alavancas de Crescimento</div>
       <div class="phase-card-deliverable" contenteditable="true" data-eid="e0021" onclick="event.stopPropagation()">⬡ Diagnóstico canais + Matriz de Prontidão</div>
       <div data-eid="badge02" class="phase-status-badge psb-none" data-stt="0" onclick="cycleStatus(event,this)"><span class="phase-status-dot"></span><span class="stt-lbl">Não iniciado</span></div>
-      <div class="phase-cta">Ver fase</div>
+      <div class="phase-cta" contenteditable="true" data-eid="eFix964">Ver fase</div>
     </div>
     <div class="phase-card" onclick="showPhase(2)">
-      <div class="phase-number">Fase 03</div>
-      <div class="phase-card-period">Nov–Dez / 2026</div>
+      <div class="phase-number" contenteditable="true" data-eid="eFix955">Fase 03</div>
+      <div class="phase-card-period" contenteditable="true" data-eid="eFix960">Nov–Dez / 2026</div>
       <div class="phase-card-title" contenteditable="true" data-eid="e0022" onclick="event.stopPropagation()">Arquitetura do Programa de Crescimento</div>
       <div class="phase-card-deliverable" contenteditable="true" data-eid="e0023" onclick="event.stopPropagation()">⬡ Arquitetura + Proposta de Valor + Governança</div>
       <div data-eid="badge03" class="phase-status-badge psb-none" data-stt="0" onclick="cycleStatus(event,this)"><span class="phase-status-dot"></span><span class="stt-lbl">Não iniciado</span></div>
-      <div class="phase-cta">Ver fase</div>
+      <div class="phase-cta" contenteditable="true" data-eid="eFix965">Ver fase</div>
     </div>
     <div class="phase-card" onclick="showPhase(3)">
-      <div class="phase-number">Fase 04</div>
-      <div class="phase-card-period">Jan / 2027</div>
+      <div class="phase-number" contenteditable="true" data-eid="eFix956">Fase 04</div>
+      <div class="phase-card-period" contenteditable="true" data-eid="eFix961">Jan / 2027</div>
       <div class="phase-card-title" contenteditable="true" data-eid="e0024" onclick="event.stopPropagation()">Teste Ácido e Validação de Mercado</div>
       <div class="phase-card-deliverable" contenteditable="true" data-eid="e0025" onclick="event.stopPropagation()">⬡ Diretrizes para versão final do programa</div>
       <div data-eid="badge04" class="phase-status-badge psb-none" data-stt="0" onclick="cycleStatus(event,this)"><span class="phase-status-dot"></span><span class="stt-lbl">Não iniciado</span></div>
-      <div class="phase-cta">Ver fase</div>
+      <div class="phase-cta" contenteditable="true" data-eid="eFix966">Ver fase</div>
     </div>
     <div class="phase-card" onclick="showPhase(4)">
-      <div class="phase-number">Fase 05</div>
-      <div class="phase-card-period">Jan / 2027</div>
+      <div class="phase-number" contenteditable="true" data-eid="eFix957">Fase 05</div>
+      <div class="phase-card-period" contenteditable="true" data-eid="eFix962">Jan / 2027</div>
       <div class="phase-card-title" contenteditable="true" data-eid="e0026" onclick="event.stopPropagation()">Plano de Implementação — Transição Onda 2</div>
       <div class="phase-card-deliverable" contenteditable="true" data-eid="e0027" onclick="event.stopPropagation()">⬡ Roadmap 2027 + Modelo financeiro + KPIs</div>
       <div data-eid="badge05" class="phase-status-badge psb-wave" data-stt="4" onclick="cycleStatus(event,this)"><span class="phase-status-dot"></span><span class="stt-lbl">Prepara Onda 2</span></div>
-      <div class="phase-cta">Ver fase</div>
+      <div class="phase-cta" contenteditable="true" data-eid="eFix967">Ver fase</div>
     </div>
   </div>
 </div>
 <!-- GANTT -->
 <div class="gantt-section">
   <div class="gantt-header-row">
-    <div class="section-heading fenton-black">Cronograma Detalhado do Projeto — Gráfico de Gantt</div>
+    <div class="section-heading fenton-black" contenteditable="true" data-eid="eFix026">Cronograma Detalhado do Projeto — Gráfico de Gantt</div>
     <div class="gantt-zoom-ctrl">
       <span class="gz-label">Row Size</span>
       <button class="gz-btn" onclick="ganttZoom(-1)">−</button>
@@ -904,12 +925,12 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
       </table>
     </div>
     <div class="gantt-legend">
-      <div class="gantt-legend-item"><span class="gl-dot" style="background:#5B8FD4"></span>Fase 1</div>
-      <div class="gantt-legend-item"><span class="gl-dot" style="background:#13BBB3"></span>Fase 2</div>
-      <div class="gantt-legend-item"><span class="gl-dot" style="background:#9B6FD4"></span>Fase 3</div>
-      <div class="gantt-legend-item"><span class="gl-dot" style="background:#D4A24E"></span>Fase 4</div>
-      <div class="gantt-legend-item"><span class="gl-dot" style="background:#4EAF72"></span>Fase 5</div>
-      <div class="gantt-legend-item"><span class="gl-dot" style="background:rgba(242,103,101,0.3);border:1px solid #F26765"></span>Marco</div>
+      <div class="gantt-legend-item"><span class="gl-dot" style="background:#5B8FD4"></span><span contenteditable="true" data-eid="eFix974">Fase 1</span></div>
+      <div class="gantt-legend-item"><span class="gl-dot" style="background:#13BBB3"></span><span contenteditable="true" data-eid="eFix975">Fase 2</span></div>
+      <div class="gantt-legend-item"><span class="gl-dot" style="background:#9B6FD4"></span><span contenteditable="true" data-eid="eFix976">Fase 3</span></div>
+      <div class="gantt-legend-item"><span class="gl-dot" style="background:#D4A24E"></span><span contenteditable="true" data-eid="eFix977">Fase 4</span></div>
+      <div class="gantt-legend-item"><span class="gl-dot" style="background:#4EAF72"></span><span contenteditable="true" data-eid="eFix978">Fase 5</span></div>
+      <div class="gantt-legend-item"><span class="gl-dot" style="background:rgba(242,103,101,0.3);border:1px solid #F26765"></span><span contenteditable="true" data-eid="eFix979">Marco</span></div>
     </div>
   </div>
 </div>
@@ -933,7 +954,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
   <div class="phase-content">
     <div class="two-col">
       <div class="content-block">
-        <div class="block-title fenton-black">Principais Atividades</div>
+        <div class="block-title fenton-black" contenteditable="true" data-eid="eFix001">Principais Atividades</div>
         <ul class="item-list">
           <li contenteditable="true" data-eid="e0070">Kick-off executivo do projeto</li>
           <li contenteditable="true" data-eid="e0071">Entrevistas com lideranças da Stoller</li>
@@ -946,7 +967,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
         </ul>
       </div>
       <div class="content-block">
-        <div class="block-title fenton-black">Entregável</div>
+        <div class="block-title fenton-black" contenteditable="true" data-eid="eFix002">Entregável</div>
         <ul class="item-list">
           <li contenteditable="true" data-eid="e0078">Diagnóstico estratégico inicial</li>
           <li contenteditable="true" data-eid="e0079">Hipóteses de crescimento identificadas</li>
@@ -975,7 +996,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
   <div class="phase-content">
     <div class="two-col">
       <div class="content-block">
-        <div class="block-title fenton-black">Principais Atividades</div>
+        <div class="block-title fenton-black" contenteditable="true" data-eid="eFix003">Principais Atividades</div>
         <ul class="item-list">
           <li contenteditable="true" data-eid="e0086">Entrevistas com cooperativas e revendas prioritárias</li>
           <li contenteditable="true" data-eid="e0087">Conversas com equipes comerciais envolvidas</li>
@@ -988,7 +1009,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
         </ul>
       </div>
       <div class="content-block">
-        <div class="block-title fenton-black">Entregáveis</div>
+        <div class="block-title fenton-black" contenteditable="true" data-eid="eFix004">Entregáveis</div>
         <ul class="item-list">
           <li contenteditable="true" data-eid="e0094">Diagnóstico dos canais (cooperativas e revendas)</li>
           <li contenteditable="true" data-eid="e0095">Matriz de Potencial e Prontidão dos Canais</li>
@@ -1004,7 +1025,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
 
     <!-- METODOLOGIA 1: VoC -->
     <div class="content-block">
-      <div class="block-title fenton-black">Metodologia · Voice of Customer (VoC)</div>
+      <div class="block-title fenton-black" contenteditable="true" data-eid="eFix005">Metodologia · Voice of Customer (VoC)</div>
       <p style="font-size:13px;color:var(--text-light);line-height:1.65;margin-bottom:18px;" contenteditable="true" data-eid="e0099">Captura estruturada de percepções, necessidades e expectativas dos canais por meio de entrevistas qualitativas com cooperativas, revendas e equipes comerciais.</p>
       <!-- VoC visual: 4 quadrantes estilo Word -->
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;border:1px solid rgba(242,103,101,0.2);border-radius:6px;overflow:hidden;">
@@ -1045,7 +1066,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
 
     <!-- METODOLOGIA 2: Channel Assessment Matriz visual com pontos -->
     <div class="content-block">
-      <div class="block-title fenton-black">Metodologia · Channel Assessment — Matriz de Potencial e Prontidão</div>
+      <div class="block-title fenton-black" contenteditable="true" data-eid="eFix006">Metodologia · Channel Assessment — Matriz de Potencial e Prontidão</div>
       <p style="font-size:13px;color:var(--text-light);line-height:1.65;margin-bottom:18px;" contenteditable="true" data-eid="e0112">Classificação dos canais em quatro quadrantes a partir de dois eixos: Potencial de Crescimento (Y) e Prontidão / Abertura para Parceria (X). Clique nos nomes para editar.</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;">
         <!-- MATRIZ SVG interativa -->
@@ -1110,55 +1131,55 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
             <g class="matrix-point" style="cursor:pointer;" onclick="selectMatrixPoint(this)">
               <circle cx="347" cy="54" r="10" fill="#F26765" opacity="0.9"/>
               <text x="347" y="58" text-anchor="middle" font-family="Open Sans,sans-serif" font-size="8" fill="white" font-weight="700">A</text>
-              <text class="mp-label" x="358" y="50" font-family="Open Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.85)" contenteditable="false">Coop A</text>
+              <text class="mp-label" x="358" y="50" font-family="Open Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.85)" contenteditable="true" data-eid="eFix901">Coop A</text>
             </g>
             <!-- Coop C: x=7.5, y=8 → cx=312, cy=88 -->
             <g class="matrix-point" style="cursor:pointer;" onclick="selectMatrixPoint(this)">
               <circle cx="312" cy="88" r="10" fill="#13BBB3" opacity="0.9"/>
               <text x="312" y="92" text-anchor="middle" font-family="Open Sans,sans-serif" font-size="8" fill="white" font-weight="700">B</text>
-              <text class="mp-label" x="323" y="84" font-family="Open Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.85)" contenteditable="false">Coop C</text>
+              <text class="mp-label" x="323" y="84" font-family="Open Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.85)" contenteditable="true" data-eid="eFix902">Coop C</text>
             </g>
             <!-- Revenda E: x=8.5, y=7.5 → cx=347, cy=105 -->
             <g class="matrix-point" style="cursor:pointer;" onclick="selectMatrixPoint(this)">
               <circle cx="347" cy="105" r="10" fill="#4EAF72" opacity="0.9"/>
               <text x="347" y="109" text-anchor="middle" font-family="Open Sans,sans-serif" font-size="8" fill="white" font-weight="700">C</text>
-              <text class="mp-label" x="358" y="101" font-family="Open Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.85)" contenteditable="false">Revenda E</text>
+              <text class="mp-label" x="358" y="101" font-family="Open Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.85)" contenteditable="true" data-eid="eFix903">Revenda E</text>
             </g>
             <!-- Coop B: x=4, y=8 → cx=190, cy=88 -->
             <g class="matrix-point" style="cursor:pointer;" onclick="selectMatrixPoint(this)">
               <circle cx="162" cy="88" r="10" fill="#F26765" opacity="0.75"/>
               <text x="162" y="92" text-anchor="middle" font-family="Open Sans,sans-serif" font-size="8" fill="white" font-weight="700">D</text>
-              <text class="mp-label" x="173" y="84" font-family="Open Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.85)" contenteditable="false">Coop B</text>
+              <text class="mp-label" x="173" y="84" font-family="Open Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.85)" contenteditable="true" data-eid="eFix904">Coop B</text>
             </g>
             <!-- Revenda D: x=4.5, y=7 → cx=207, cy=122 -->
             <g class="matrix-point" style="cursor:pointer;" onclick="selectMatrixPoint(this)">
               <circle cx="155" cy="122" r="10" fill="#9B6FD4" opacity="0.9"/>
               <text x="155" y="126" text-anchor="middle" font-family="Open Sans,sans-serif" font-size="8" fill="white" font-weight="700">E</text>
-              <text class="mp-label" x="166" y="118" font-family="Open Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.85)" contenteditable="false">Revenda D</text>
+              <text class="mp-label" x="166" y="118" font-family="Open Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.85)" contenteditable="true" data-eid="eFix905">Revenda D</text>
             </g>
             <!-- MONITORAR: x=2, y=3 → cx=120, cy=258 -->
             <g class="matrix-point" style="cursor:pointer;" onclick="selectMatrixPoint(this)">
               <circle cx="120" cy="258" r="10" fill="#6b7199" opacity="0.85"/>
               <text x="120" y="262" text-anchor="middle" font-family="Open Sans,sans-serif" font-size="8" fill="white" font-weight="700">F</text>
-              <text class="mp-label" x="131" y="254" font-family="Open Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" contenteditable="false">Canal F</text>
+              <text class="mp-label" x="131" y="254" font-family="Open Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" contenteditable="true" data-eid="eFix906">Canal F</text>
             </g>
             <!-- MONITORAR 2: x=3, y=1.5 → cx=155, cy=309 -->
             <g class="matrix-point" style="cursor:pointer;" onclick="selectMatrixPoint(this)">
               <circle cx="155" cy="309" r="10" fill="#6b7199" opacity="0.75"/>
               <text x="155" y="313" text-anchor="middle" font-family="Open Sans,sans-serif" font-size="8" fill="white" font-weight="700">G</text>
-              <text class="mp-label" x="166" y="305" font-family="Open Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" contenteditable="false">Revenda G</text>
+              <text class="mp-label" x="166" y="305" font-family="Open Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" contenteditable="true" data-eid="eFix907">Revenda G</text>
             </g>
             <!-- PREPARAR: x=7, y=2 → cx=295, cy=292 -->
             <g class="matrix-point" style="cursor:pointer;" onclick="selectMatrixPoint(this)">
               <circle cx="295" cy="292" r="10" fill="#D4A24E" opacity="0.9"/>
               <text x="295" y="296" text-anchor="middle" font-family="Open Sans,sans-serif" font-size="8" fill="white" font-weight="700">H</text>
-              <text class="mp-label" x="306" y="288" font-family="Open Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.85)" contenteditable="false">Coop H</text>
+              <text class="mp-label" x="306" y="288" font-family="Open Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.85)" contenteditable="true" data-eid="eFix908">Coop H</text>
             </g>
             <!-- PREPARAR 2: x=8, y=3 → cx=330, cy=258 -->
             <g class="matrix-point" style="cursor:pointer;" onclick="selectMatrixPoint(this)">
               <circle cx="330" cy="258" r="10" fill="#D4A24E" opacity="0.75"/>
               <text x="330" y="262" text-anchor="middle" font-family="Open Sans,sans-serif" font-size="8" fill="white" font-weight="700">I</text>
-              <text class="mp-label" x="341" y="254" font-family="Open Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.85)" contenteditable="false">Revenda I</text>
+              <text class="mp-label" x="341" y="254" font-family="Open Sans,sans-serif" font-size="10" fill="rgba(255,255,255,0.85)" contenteditable="true" data-eid="eFix909">Revenda I</text>
             </g>
           </svg>
           <!-- Edit panel for selected point -->
@@ -1207,7 +1228,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
 
     <!-- METODOLOGIA 3: Ecosystem Mapping — hub visual estilo Stoller -->
     <div class="content-block">
-      <div class="block-title fenton-black">Metodologia · Ecosystem Mapping — Mapa do Ecossistema de Geração de Valor</div>
+      <div class="block-title fenton-black" contenteditable="true" data-eid="eFix007">Metodologia · Ecosystem Mapping — Mapa do Ecossistema de Geração de Valor</div>
       <p style="font-size:13px;color:var(--text-light);line-height:1.65;margin-bottom:16px;" contenteditable="true" data-eid="e0117">Principais atores, influências e relações no ecossistema de geração de valor do Programa Stoller.</p>
       <div style="display:flex;justify-content:center;">
         <svg viewBox="0 0 700 660" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;height:auto;display:block;">
@@ -1332,7 +1353,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
 
     <!-- METODOLOGIA 4: Growth Opportunity Assessment — Matriz + Oportunidades -->
     <div class="content-block">
-      <div class="block-title fenton-black">Metodologia · Growth Opportunity Assessment — Mapa de Oportunidades de Crescimento</div>
+      <div class="block-title fenton-black" contenteditable="true" data-eid="eFix008">Metodologia · Growth Opportunity Assessment — Mapa de Oportunidades de Crescimento</div>
       <p style="font-size:13px;color:var(--text-light);line-height:1.65;margin-bottom:20px;" contenteditable="true" data-eid="e0118">Priorização de iniciativas com base em Impacto Potencial e Facilidade de Captura. Clique nos textos para editar.</p>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
@@ -1481,7 +1502,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
     <!-- ── ATIVIDADES ── -->
     <div class="two-col">
       <div class="content-block">
-        <div class="block-title fenton-black">Bloco 1 · Definição das Alavancas de Crescimento</div>
+        <div class="block-title fenton-black" contenteditable="true" data-eid="eFix009">Bloco 1 · Definição das Alavancas de Crescimento</div>
         <ul class="item-list">
           <li contenteditable="true" data-eid="e0153">Identificação dos mecanismos com maior potencial de geração de negócios</li>
           <li contenteditable="true" data-eid="e0154">Avaliação da aderência das alavancas aos diferentes perfis de canais</li>
@@ -1497,7 +1518,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
         </div>
       </div>
       <div class="content-block">
-        <div class="block-title fenton-black">Bloco 2 · Arquitetura do Programa</div>
+        <div class="block-title fenton-black" contenteditable="true" data-eid="eFix010">Bloco 2 · Arquitetura do Programa</div>
         <ul class="item-list">
           <li contenteditable="true" data-eid="e0162">Definição dos objetivos do programa</li>
           <li contenteditable="true" data-eid="e0163">Construção da proposta de valor para os canais</li>
@@ -1515,7 +1536,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
     <!-- ── ENTREGÁVEIS (TOPO) ── -->
     <div class="two-col">
       <div class="content-block">
-        <div class="block-title fenton-black">Entregáveis · Arquitetura</div>
+        <div class="block-title fenton-black" contenteditable="true" data-eid="eFix011">Entregáveis · Arquitetura</div>
         <ul class="item-list">
           <li contenteditable="true" data-eid="e0171">Objetivos do programa e proposta de valor</li>
           <li contenteditable="true" data-eid="e0172">Pilares estratégicos e critérios de participação</li>
@@ -1525,7 +1546,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
         </ul>
       </div>
       <div class="content-block">
-        <div class="block-title fenton-black">Entregáveis · Modelo Operacional e Governança</div>
+        <div class="block-title fenton-black" contenteditable="true" data-eid="eFix012">Entregáveis · Modelo Operacional e Governança</div>
         <ul class="item-list">
           <li contenteditable="true" data-eid="e0176">Estrutura de funcionamento do programa</li>
           <li contenteditable="true" data-eid="e0177">Fóruns e rituais de gestão</li>
@@ -1543,7 +1564,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
          METODOLOGIA 1: VALUE PROPOSITION DESIGN
     ══════════════════════════════════════════════════════════ -->
     <div class="content-block">
-      <div class="block-title fenton-black">Metodologia · Value Proposition Design</div>
+      <div class="block-title fenton-black" contenteditable="true" data-eid="eFix013">Metodologia · Value Proposition Design</div>
       <p style="font-size:13px;color:var(--text-light);line-height:1.65;margin-bottom:20px;" contenteditable="true" data-eid="e0181">Proposta de valor do Programa de Crescimento Stoller para Canais Prioritários.</p>
 
       <!-- ROW 1: 3 colunas — Perfis | Proposta de Valor | Resultados -->
@@ -1726,7 +1747,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
          METODOLOGIA 2: PROGRAM DESIGN
     ══════════════════════════════════════════════════════════ -->
     <div class="content-block">
-      <div class="block-title fenton-black">Metodologia · Program Design</div>
+      <div class="block-title fenton-black" contenteditable="true" data-eid="eFix014">Metodologia · Program Design</div>
       <p style="font-size:13px;color:var(--text-light);line-height:1.65;margin-bottom:20px;" contenteditable="true" data-eid="e0236">Estrutura do Programa de Crescimento Stoller — Como o programa funciona na prática para gerar relacionamento, desenvolvimento e crescimento dos canais prioritários.</p>
 
       <!-- Objetivo + Pilares + Níveis -->
@@ -1900,7 +1921,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
          METODOLOGIA 3: GOVERNANCE FRAMEWORK
     ══════════════════════════════════════════════════════════ -->
     <div class="content-block">
-      <div class="block-title fenton-black">Metodologia · Governance Framework</div>
+      <div class="block-title fenton-black" contenteditable="true" data-eid="eFix015">Metodologia · Governance Framework</div>
       <p style="font-size:13px;color:var(--text-light);line-height:1.65;margin-bottom:20px;" contenteditable="true" data-eid="e0286">Estrutura de gestão, papéis, fóruns e rituais para garantir execução e geração de resultados.</p>
 
       <!-- Top: Estrutura + Papéis -->
@@ -2074,7 +2095,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
   <div class="phase-content">
     <div class="two-col">
       <div class="content-block">
-        <div class="block-title fenton-black">Principais Atividades</div>
+        <div class="block-title fenton-black" contenteditable="true" data-eid="eFix016">Principais Atividades</div>
         <ul class="item-list">
           <li contenteditable="true" data-eid="e0350">Apresentação do programa a alguns canais selecionados</li>
           <li contenteditable="true" data-eid="e0351">Avaliação da atratividade do programa</li>
@@ -2087,7 +2108,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
         </ul>
       </div>
       <div class="content-block">
-        <div class="block-title fenton-black">Entregáveis</div>
+        <div class="block-title fenton-black" contenteditable="true" data-eid="eFix017">Entregáveis</div>
         <div style="font-family:'Fenton','Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">Diretrizes para Consolidação da Versão Final</div>
         <ul class="item-list">
           <li contenteditable="true" data-eid="e0358">Recomendações estratégicas</li>
@@ -2100,7 +2121,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
 
     <!-- Painel Teste Ácido — 4 perguntas -->
     <div class="content-block">
-      <div class="block-title fenton-black">Painel do Teste Ácido — 4 Perguntas Críticas de Validação</div>
+      <div class="block-title fenton-black" contenteditable="true" data-eid="eFix018">Painel do Teste Ácido — 4 Perguntas Críticas de Validação</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;">
         <div style="padding:16px 18px;background:rgba(242,103,101,0.09);border:1px solid rgba(242,103,101,0.25);border-radius:6px;border-left:4px solid var(--coral);">
           <div style="font-family:'Fenton','Barlow Condensed',sans-serif;font-weight:900;font-size:28px;color:rgba(242,103,101,0.3);line-height:1;margin-bottom:4px;">01</div>
@@ -2173,7 +2194,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
   <div class="phase-content">
     <div class="two-col">
       <div class="content-block">
-        <div class="block-title fenton-black">Consolidação da Versão Final do Programa</div>
+        <div class="block-title fenton-black" contenteditable="true" data-eid="eFix019">Consolidação da Versão Final do Programa</div>
         <ul class="item-list">
           <li contenteditable="true" data-eid="e0379">Incorporação dos ajustes validados no Teste Ácido</li>
           <li contenteditable="true" data-eid="e0380">Refinamento dos pilares do programa e proposta de valor</li>
@@ -2181,7 +2202,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
         </ul>
       </div>
       <div class="content-block">
-        <div class="block-title fenton-black">Planejamento da Implementação</div>
+        <div class="block-title fenton-black" contenteditable="true" data-eid="eFix020">Planejamento da Implementação</div>
         <ul class="item-list">
           <li contenteditable="true" data-eid="e0382">Planejamento de 2027 com ações e públicos específicos</li>
           <li contenteditable="true" data-eid="e0383">Definição dos públicos prioritários internos e externos</li>
@@ -2194,7 +2215,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
     </div>
 
     <div class="content-block">
-      <div class="block-title fenton-black">Estruturação do Modelo de Gestão e Financeiro</div>
+      <div class="block-title fenton-black" contenteditable="true" data-eid="eFix021">Estruturação do Modelo de Gestão e Financeiro</div>
       <div class="three-col">
         <div style="padding:16px;background:rgba(242,103,101,0.08);border:1px solid rgba(242,103,101,0.2);border-radius:6px;border-top:3px solid var(--coral);">
           <div style="font-family:'Fenton','Barlow Condensed',sans-serif;font-weight:900;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--coral);margin-bottom:10px;">Indicadores de Sucesso</div>
@@ -2226,7 +2247,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
 
     <!-- Roadmap 2027 visual -->
     <div class="content-block">
-      <div class="block-title fenton-black">Roadmap de Implementação 2027</div>
+      <div class="block-title fenton-black" contenteditable="true" data-eid="eFix022">Roadmap de Implementação 2027</div>
       <div style="display:flex;flex-direction:column;gap:0;border:1px solid rgba(255,255,255,0.06);border-radius:6px;overflow:hidden;">
         <div style="display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid rgba(255,255,255,0.05);">
           <div style="padding:12px 16px;background:rgba(48,53,67,0.6);font-family:'Fenton','Barlow Condensed',sans-serif;font-weight:900;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);display:flex;align-items:center;">Públicos Internos</div>
@@ -2276,7 +2297,7 @@ body.edit-locked .edit-lock-btn{opacity:1!important;pointer-events:auto!importan
     </div>
 
     <div class="content-block">
-      <div class="block-title fenton-black">Entregáveis</div>
+      <div class="block-title fenton-black" contenteditable="true" data-eid="eFix023">Entregáveis</div>
       <div class="two-col">
         <ul class="item-list">
           <li contenteditable="true" data-eid="e0417">Versão final do programa de aceleração</li>
@@ -2586,6 +2607,7 @@ function ppAddRow() {
     '<div class="pp-col pp-col-task" contenteditable="true" data-eid="eNew' + t + 'b">Nova tarefa — clique para editar</div>' +
     '<div class="pp-col pp-col-resp" contenteditable="true" data-eid="eNew' + t + 'c">Responsável</div>' +
     '<div class="pp-col pp-col-data" contenteditable="true" data-eid="eNew' + t + 'd">Data</div>' +
+    '<div class="pp-col pp-col-status"><span class="pp-status pps-todo" data-eid="eNew' + t + 'e" data-stt="0" onclick="cyclePpStatus(this)"><span class="pp-status-dot"></span><span class="pps-lbl">A iniciar</span></span></div>' +
     '<div class="pp-col pp-col-del"><button class="pp-del-btn" onclick="ppDelRow(this)" title="Remover">✕</button></div>';
   rows.appendChild(row);
   var task = row.querySelector('.pp-col-task');
@@ -2595,6 +2617,40 @@ function ppAddRow() {
 function ppDelRow(btn) {
   var row = btn.closest('.pp-row');
   if (row) row.remove();
+}
+
+/* ---------- STATUS DAS LINHAS DE PRÓXIMOS PASSOS ---------- */
+var PPS_DEFS = [
+  { cls: 'pps-todo', label: 'A iniciar' },
+  { cls: 'pps-wait', label: 'Aguardando' },
+  { cls: 'pps-prog', label: 'Em andamento' },
+  { cls: 'pps-done', label: 'Concluído' },
+  { cls: 'pps-late', label: 'Atrasado' }
+];
+
+function cyclePpStatus(el) {
+  var stt = parseInt(el.getAttribute('data-stt')) || 0;
+  var next = (stt + 1) % PPS_DEFS.length;
+  PPS_DEFS.forEach(function(d){ el.classList.remove(d.cls); });
+  var def = PPS_DEFS[next];
+  el.classList.add('pp-status', def.cls);
+  el.setAttribute('data-stt', String(next));
+  var lbl = el.querySelector('.pps-lbl');
+  if (lbl) lbl.textContent = def.label;
+}
+
+/* Garante que linhas antigas (salvas antes da coluna de status existir) recebam a coluna */
+function normalizePpRows() {
+  var rows = document.querySelectorAll('#ppRows .pp-row');
+  rows.forEach(function(row, i) {
+    if (row.querySelector('.pp-col-status')) return;
+    var del = row.querySelector('.pp-col-del');
+    var eid = 'eStatFix' + Date.now() + i;
+    var div = document.createElement('div');
+    div.className = 'pp-col pp-col-status';
+    div.innerHTML = '<span class="pp-status pps-todo" data-eid="' + eid + '" data-stt="0" onclick="cyclePpStatus(this)"><span class="pp-status-dot"></span><span class="pps-lbl">A iniciar</span></span>';
+    if (del) row.insertBefore(div, del); else row.appendChild(div);
+  });
 }
 
 /* ---------- FORMATAÇÃO (negrito/itálico/sublinhado) ---------- */
@@ -2832,6 +2888,7 @@ function applyState(state) {
     var pr = document.getElementById('ppRows');
     if (pr) pr.innerHTML = state.ppRowsHTML;
   }
+  normalizePpRows();
 
   if (state.editables && typeof state.editables === 'object') {
     Object.keys(state.editables).forEach(function(eid) {
